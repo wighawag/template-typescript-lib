@@ -2,11 +2,11 @@
 
 ## Getting Started
 
-Click the [Use this template](https://github.com/wighawag/template-typesript-lib/generate) button to create a new repository using this template.
+Click the [Use this template](https://github.com/wighawag/template-typescript-lib /generate) button to create a new repository using this template.
 
 OR
 
-Run `bun create wighawag/template-typesript-lib <my-lib>`.
+Run `bun create wighawag/template-typescript-lib  <my-lib>`.
 
 ## Setup
 
