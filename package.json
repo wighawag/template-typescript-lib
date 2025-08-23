@@ -1,19 +1,38 @@
 {
-  "name": "pkg-name",
-  "version": "0.0.0",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "description": "",
-  "scripts": {
-    "build": "bun run build.mjs",
-    "prepublishOnly": "bun run build"
-  },
-  "files": [
-    "dist"
-  ],
-  "devDependencies": {
-    "bun-plugin-dts": "^0.2.1",
-    "@types/bun": "^1.0.0",
-    "typescript": "^5.2.2"
-  }
+	"name": "template-typescript-lib",
+	"version": "0.0.0",
+	"publishConfig": {
+		"access": "public"
+	},
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"src"
+	],
+	"dependencies": {
+	},
+	"devDependencies": {
+		"as-soon": "^0.0.11",
+		"ldenv": "^0.3.12",
+		"prettier": "^3.5.3",
+		"svelte": "^5.25.12",
+		"typescript": "^5.8.3"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild"
+		]
+	},
+	"scripts": {
+		"build": "tsc --project tsconfig.json",
+		"dev": "as-soon -w src pnpm build",
+		"format:check": "prettier --check .",
+		"format:write": "prettier --write ."
+	}
 }
