@@ -18,11 +18,14 @@
 	"dependencies": {
 	},
 	"devDependencies": {
-		"as-soon": "^0.0.11",
-		"ldenv": "^0.3.12",
-		"prettier": "^3.5.3",
-		"svelte": "^5.25.12",
-		"typescript": "^5.8.3"
+		"@changesets/cli": "^2.29.8",
+		"@types/node": "^25.2.0",
+		"as-soon": "^0.1.5",
+		"cross-env": "^10.1.0",
+		"prettier": "^3.8.0",
+		"tsx": "^4.21.0",
+		"typescript": "^5.3.3",
+		"vitest": "^4.0.18"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
@@ -30,9 +33,13 @@
 		]
 	},
 	"scripts": {
-		"build": "tsc --project tsconfig.json",
-		"dev": "as-soon -w src pnpm build",
+		"prepublishOnly": "pnpm format:check && pnpm build",
+		"release": "pnpm prepublishOnly && git push --all && pnpm changeset publish && git push --tags",
+		"format": "prettier --write .",
 		"format:check": "prettier --check .",
-		"format:write": "prettier --write ."
+		"build": "tsc",
+		"dev": "as-soon -w src pnpm build",
+		"test": "vitest run",
+		"test:watch": "vitest"
 	}
 }
