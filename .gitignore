@@ -1,2 +1,6 @@
-dist/
+# environment variables
+.env*.local
+
+# node modules
 node_modules/
+
