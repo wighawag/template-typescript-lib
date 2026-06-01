@@ -18,7 +18,6 @@
 	"dependencies": {
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.29.8",
 		"@types/node": "^25.2.0",
 		"as-soon": "^0.1.5",
 		"cross-env": "^10.1.0",
@@ -28,8 +27,6 @@
 		"vitest": "^4.0.18"
 	},
 	"scripts": {
-		"prepublishOnly": "pnpm format:check && pnpm build",
-		"release": "pnpm prepublishOnly && git push --all && pnpm changeset publish && git push --tags",
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"build": "tsc",

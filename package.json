@@ -4,19 +4,17 @@
   "private": true,
   "type": "module",
   "devDependencies": {
+    "@changesets/cli": "^2.29.8",
     "ldenv": "^0.3.16",
-    "set-defaults": "^0.0.5",
     "zellij-launcher": "^0.0.1"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild"
-    ]
-  },
   "scripts": {
-    "prepare": "set-defaults .vscode",
+    "prepare": "pnpm build",
     "preinstall": "npx only-allow pnpm",
     "cleandep": "rm -rf node_modules && pnpm -r exec rm -rf node_modules",
+    "---------------------- PUBLISH --------------------": "",
+    "prepublishOnly": "pnpm format:check && pnpm build",
+    "release": "pnpm prepublishOnly && git push --all && pnpm changeset publish && git push --tags",
     "---------------------- FORMAT ----------------------": "",
     "format": "pnpm -r format",
     "format:check": "pnpm -r format:check",

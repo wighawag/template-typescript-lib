@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@changesets/cli':
+        specifier: ^2.29.8
+        version: 2.29.8(@types/node@25.3.0)
       ldenv:
         specifier: ^0.3.16
         version: 0.3.16
