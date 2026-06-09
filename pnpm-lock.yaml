@@ -14,6 +14,9 @@ importers:
       ldenv:
         specifier: ^0.3.16
         version: 0.3.16
+      prettier:
+        specifier: ^3.8.4
+        version: 3.8.4
       zellij-launcher:
         specifier: ^0.0.1
         version: 0.0.1
@@ -26,9 +29,6 @@ importers:
       as-soon:
         specifier: ^0.1.5
         version: 0.1.5
-      prettier:
-        specifier: ^3.8.0
-        version: 3.8.1
       tsx:
         specifier: ^4.21.0
         version: 4.21.0
@@ -838,8 +838,8 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  prettier@3.8.1:
-    resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
+  prettier@3.8.4:
+    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -1777,7 +1777,7 @@ snapshots:
 
   prettier@2.8.8: {}
 
-  prettier@3.8.1: {}
+  prettier@3.8.4: {}
 
   quansync@0.2.11: {}
 

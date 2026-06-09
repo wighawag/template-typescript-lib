@@ -5,6 +5,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.29.8",
     "ldenv": "^0.3.16",
+    "prettier": "^3.8.4",
     "zellij-launcher": "^0.0.1"
   },
   "scripts": {
@@ -15,8 +16,8 @@
     "prepublishOnly": "pnpm format:check && pnpm build",
     "release": "pnpm prepublishOnly && git push --all && pnpm changeset publish && git push --tags",
     "---------------------- FORMAT ----------------------": "",
-    "format": "pnpm -r format",
-    "format:check": "pnpm -r format:check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "---------------------- DEV ----------------------": "",
     "dev": "ldenv pnpm --filter './packages/*' dev",
     "build": "ldenv pnpm --filter './packages/*' build",
