@@ -46,6 +46,9 @@ permissions:
 
 jobs:
   release:
+    # Not in the template itself: its example package is not meant for npm. A
+    # repository created from the template has another name, so this runs there.
+    if: github.repository != 'wighawag/template-typescript-lib'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
